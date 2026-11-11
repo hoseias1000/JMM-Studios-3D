@@ -1,0 +1,92 @@
+.studio-monitor-dialog {
+  width: min(1000px, calc(100vw - 40px));
+  max-width: none;
+  max-height: calc(100dvh - 48px);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid #41444d;
+  border-radius: 16px;
+  background: #0b0c0f;
+  color: #f5f5f5;
+  box-shadow: 0 28px 110px #0009;
+}
+.studio-monitor-dialog::backdrop { background: #050609cf; }
+.studio-monitor-dialog button:focus-visible,
+.studio-monitor-dialog select:focus-visible { outline: 2px solid #f5f5f5; outline-offset: 3px; }
+.studio-monitor-heading {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  border-bottom: 1px solid #303238;
+  background: #111318;
+}
+.studio-monitor-heading h2 { font-size: 23px; letter-spacing: -.6px; }
+.studio-monitor-heading p { margin-top: 6px; color: #a2a5ab; font-size: 11px; }
+.studio-monitor-heading .icon-button { flex-shrink: 0; }
+.studio-monitor-section { margin: 22px; padding: 22px; border: 1px solid #303238; border-radius: 10px; background: #191b20; }
+.studio-monitor-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.studio-monitor-section-heading h3 { display: flex; align-items: center; gap: 9px; font-size: 16px; font-weight: 550; }
+.studio-monitor-section-heading p { margin-top: 7px; color: #a2a5ab; font-size: 11px; line-height: 1.6; }
+.studio-monitor-section-heading .button { flex-shrink: 0; font-size: 11px; }
+.studio-monitor-filter { display: flex; flex-direction: column; gap: 8px; min-width: 0; color: #a2a5ab; font-size: 11px; }
+.studio-monitor-filter select,
+.studio-monitor-task select { width: 100%; min-width: 0; padding: 10px 12px; border: 1px solid #41444d; border-radius: 6px; background: #101216; color: #f5f5f5; font: inherit; font-size: 12px; }
+.studio-monitor-period { max-width: 225px; margin-bottom: 18px; }
+.studio-monitor-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.studio-monitor-metrics article { min-width: 0; padding: 17px; border: 1px solid #303238; border-radius: 8px; background: #121419; }
+.studio-monitor-metrics article>span { color: #a2a5ab; font-size: 10px; }
+.studio-monitor-metrics strong { display: block; margin-top: 12px; font-size: 28px; font-weight: 500; letter-spacing: -.5px; }
+.studio-monitor-chart { display: grid; gap: 11px; margin-top: 23px; }
+.studio-monitor-day { display: flex; align-items: center; gap: 12px; font-size: 10px; }
+.studio-monitor-day time { width: 35px; color: #a2a5ab; }
+.studio-monitor-day-track { flex: 1; height: 8px; overflow: hidden; border-radius: 3px; background: #303238; }
+.studio-monitor-day-track span { display: block; height: 100%; background: #c8ced8; }
+.studio-monitor-day strong { width: 62px; text-align: right; font-size: 11px; font-weight: 500; }
+.studio-monitor-note { color: #a2a5ab; font-size: 10px; line-height: 1.7; margin-top: 17px; }
+.studio-monitor-notice { padding: 12px 14px; margin-bottom: 15px; border: 1px solid #565c68; border-radius: 6px; color: #dce0e7; background: #232831; font-size: 11px; line-height: 1.8; }
+.studio-monitor-section-footer { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 23px; }
+.studio-monitor-section-footer small { color: #a2a5ab; font-size: 10px; }
+.studio-monitor-dialog .text-button { font-size: 11px; white-space: normal; }
+.studio-monitor-stages { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-bottom: 22px; }
+.studio-monitor-stages>div { padding: 13px; min-width: 0; border: 1px solid #303238; border-radius: 7px; background: #121419; }
+.studio-monitor-stages span { display: block; color: #a2a5ab; font-size: 10px; }
+.studio-monitor-stages strong { display: block; margin-top: 8px; font-size: 22px; font-weight: 500; }
+.studio-monitor-filters { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+.studio-monitor-tasks { max-height: 320px; overflow: auto; }
+.studio-monitor-task { display: grid; grid-template-columns: minmax(0, 1fr) 140px; align-items: center; gap: 20px; padding: 16px 1px; border-top: 1px solid #303238; }
+.studio-monitor-task>div { min-width: 0; }
+.studio-monitor-task h4 { font-size: 12px; font-weight: 500; line-height: 1.6; overflow-wrap: anywhere; }
+.studio-monitor-task p { margin-top: 6px; font-size: 10px; line-height: 1.6; color: #a2a5ab; }
+.studio-monitor-task select { font-size: 11px; }
+.studio-monitor-empty { padding: 25px 12px; text-align: center; font-size: 11px; color: #a2a5ab; line-height: 1.8; }
+.studio-monitor-spin { animation: studio-monitor-turn 1.2s linear infinite; }
+@keyframes studio-monitor-turn { to { transform: rotate(360deg); } }
+@media (max-width: 640px) {
+  .studio-monitor-dialog { width: calc(100vw - 20px); max-height: calc(100dvh - 20px); border-radius: 11px; }
+  .studio-monitor-heading { padding: 19px 17px; gap: 12px; }
+  .studio-monitor-heading h2 { font-size: 20px; }
+  .studio-monitor-section { margin: 13px; padding: 16px; }
+  .studio-monitor-section-heading { align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+  .studio-monitor-section-heading h3 { font-size: 15px; }
+  .studio-monitor-section-heading p { font-size: 10px; }
+  .studio-monitor-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .studio-monitor-metrics article { padding: 13px; }
+  .studio-monitor-metrics strong { font-size: 25px; }
+  .studio-monitor-period { max-width: none; }
+  .studio-monitor-stages { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .studio-monitor-stages>div { padding: 11px; }
+  .studio-monitor-filters { grid-template-columns: 1fr; gap: 12px; }
+  .studio-monitor-task { grid-template-columns: 1fr; gap: 12px; padding-block: 15px; }
+  .studio-monitor-task select { max-width: 180px; }
+  .studio-monitor-section-footer { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .studio-monitor-dialog .text-button { padding-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .studio-monitor-spin { animation: none; }
+}
